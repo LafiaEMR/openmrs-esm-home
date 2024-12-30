@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { HomePictogram, PageHeader } from '@openmrs/esm-framework';
 import styles from './page-header.scss';
+import LafiaHomePictogram from '../../public/lafia-home-pictograms';
 
 interface PageHeaderProps {
   dashboardTitle: string;
@@ -14,7 +15,7 @@ const HomePageHeader: React.FC<PageHeaderProps> = ({ dashboardTitle }) => {
    * Translation for the home page header
    * // t('home', 'Home')
    */
-  return <PageHeader className={styles.pageHeader} illustration={<HomePictogram />} title={t(dashboardTitle)} />;
+  return <PageHeader className={styles.pageHeader} illustration={<LafiaHomePictogram />} title={t(dashboardTitle)} />;
 };
 
 export default HomePageHeader;
