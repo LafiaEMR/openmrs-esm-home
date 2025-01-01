@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import { ConfigurableLink } from '@openmrs/esm-framework';
 import { useTranslation } from 'react-i18next';
+import LafiaHomeIcon from '../public/lafia-home-icon';
+import styles from './createDashboardLink.scss';
 
 export interface DashboardLinkConfig {
   name: string;
@@ -23,10 +25,10 @@ const DashboardLink = ({ dashboardLinkConfig }: { dashboardLinkConfig: Dashboard
   return (
     <ConfigurableLink
       to={spaBasePath}
-      className={`cds--side-nav__link ${navLink === 'home' && 'active-left-nav-link'}`}
+      className={`cds--side-nav__link ${navLink === 'home' ? styles.activeLeftNavLink : ''}`}
     >
-      {/* t('home', 'Home') */}
-      {t(name)}
+      <div className={navLink === 'home' ? styles.activeHomeIcon : styles.inactiveHomeIcon}><LafiaHomeIcon /></div>
+      <span className={navLink === 'home' ? styles.activeTitle : styles.inactiveTitle}>{t(name)}</span>
     </ConfigurableLink>
   );
 };

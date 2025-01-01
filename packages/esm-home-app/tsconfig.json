@@ -1,4 +1,4 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*", "./setupTests.ts", "./jest.config.js"],
+  "include": ["src/**/*", "./setupTests.ts", "./jest.config.js", "public/lafia-home-pictograms.tsx"],
 }
